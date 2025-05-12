@@ -244,16 +244,29 @@ IoT 개발자 WPF 학습리포지토리 2025
     - MySql.Data
     - NLog
 3. Models, Views, ViewModels 폴더 생성
-4. 초기화
+4. App.xaml 초기화 작업
+5. MainView.xaml, MainViewModel 메인화면 MVVM 작업
+    - 메뉴 작업
+    - ContentControl 추가
+6. 하위 사용자 컨트롤 작업
+    - BookGenre(View, ViewModel) 
+    - Books(View, ViewModel)
+7. Models > Genre(DivisionTbl) 모델 작업
+8. BookGenreViewModel DB처리 구현
+    <img src="./image/wpf010.png" width=650>
+
+## 4일차
+
+### DB연결 CRUD 연습(계속)
+1.
 
 #### DB연결 CRUD 연습 시 추가 필요사항
 - [x] NLog로 각 기능 동작시 로그남기기. 공통화작업
 - [x] DB쿼리 모델로 이전
 - [x] 연결문자열 Common으로 이전
 - [x] MahApps.Metro 메시지 형태로 변경
-- [x]  
-
-## 4일차
+- [x] 삭제여부 메시지박스 추가
+- [x] 종료 메뉴아이템 동작
 
 ## 5일차
 
