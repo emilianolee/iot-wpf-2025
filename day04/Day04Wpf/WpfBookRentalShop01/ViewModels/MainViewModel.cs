@@ -83,7 +83,7 @@ namespace WpfBookRentalShop01.ModelViews
         public void ShowBooks()
         {
             //MessageBox.Show("책관리");
-            var vm = new BooksViewModel();
+            var vm = new BooksViewModel(Common.DIALOGCOORDINATOR);
             var v = new BooksView
             {
                 DataContext = vm,
@@ -93,6 +93,32 @@ namespace WpfBookRentalShop01.ModelViews
 
             Common.LOGGER.Info("책 관리 실행");
 
+        }
+
+        [RelayCommand]
+        public void ShowMembers()
+        {
+            var vm = new MembersViewModel(Common.DIALOGCOORDINATOR);
+            var v = new MembersView
+            {
+                DataContext = vm
+            };
+            CurrentView = v;
+            CurrentStatus = "회원 관리 화면";
+            Common.LOGGER.Info("회원 관리 실행");
+        }
+
+        [RelayCommand]
+        public void ShowRentals()
+        {
+            var vm = new RentalsViewModel();
+            var v = new RentalsView
+            {
+                DataContext = vm
+            };
+            CurrentView = v;
+            CurrentStatus = "대여 관리 화면";
+            Common.LOGGER.Info("대여 관리 실행");
         }
         #endregion
     }

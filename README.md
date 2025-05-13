@@ -273,11 +273,14 @@ https://github.com/user-attachments/assets/67714fc8-4e76-4f36-ae81-236360274f45
 5. View에 Dialog관련 네임스페이스, 속성 추가
 6. await this.dialogCoordinator.ShowMessageAsync() 사용
 
-    <img src="./image/wpf012.png" width=650>
+    <img src="./image/wpf011.png" width=650>
 
 7. BookView.xaml 화면 작업
 8. MemberView.xaml, RentalView.xaml 화면 작업
 9. ViewModel들 작업
+
+    <img src="./image/wpf012.png" width=650>
+
 
 #### DB연결 CRUD 연습 시 추가 필요사항
 - [x] 여러번 나오는 로직 메서드화
@@ -287,7 +290,15 @@ https://github.com/user-attachments/assets/67714fc8-4e76-4f36-ae81-236360274f45
 - [x] MahApps.Metro 메시지 형태로 변경
 - [x] 삭제여부 메시지박스 추가
 
+### DB연결 CRUD 실습
+- BooksView, BooksViewModel 작업 실습
+
 ## 5일차
+
+### 영화 즐겨찾기 앱
+- OpenAPI + YouTube API
+- 1일차 MVVM 내용, 오늘 학습한 것
+ 
 
 ## 6일차
 
