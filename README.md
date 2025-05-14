@@ -343,6 +343,9 @@ https://github.com/user-attachments/assets/67714fc8-4e76-4f36-ae81-236360274f45
 10. 실행시 텍스트박스에 포커스 가도록 처리
 
 
+https://github.com/user-attachments/assets/83488088-5a3f-4245-a02b-a23b6992d9b5
+
+
 ## 6일차
 
 ### MovieFinder 2025 (계속)
