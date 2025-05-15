@@ -370,4 +370,7 @@ https://github.com/user-attachments/assets/83488088-5a3f-4245-a02b-a23b6992d9b5
 7. 결과 화면
 
 
+https://github.com/user-attachments/assets/9e922883-0c0f-4744-a188-e2ea044f886d
+
+
 ## 7일차
