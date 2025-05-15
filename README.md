@@ -351,6 +351,15 @@ https://github.com/user-attachments/assets/83488088-5a3f-4245-a02b-a23b6992d9b5
 ### MovieFinder 2025 (계속)
 1. 상태 표시줄 시계 동작
 2. 상태 표시줄 검색 결과 건수 표시
-3. 즐겨찾기 DB연동...
+3. 로그 출력 정리
+4. 즐겨찾기 DB연동...
+    1. MySQL WorkBench에서 moviefinder 데이터베이스(스키마) 생성
+    2. movieitems 테이블 생성. 컬럼은 MovieItem.cs 속성과 동일 
+    3. INSERT, UPDATE, DELETE 작업
+    
+    <img src="./image/wpf016.png" width=650>
+
+5. Youtube 예고편 보기
+    1. 
 
 ## 7일차
