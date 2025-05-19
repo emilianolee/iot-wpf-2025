@@ -383,4 +383,17 @@ https://github.com/user-attachments/assets/9e922883-0c0f-4744-a188-e2ea044f886d
     - MahApps.Metro / MahApps.Metro.IconPacks
     - CefShar.Wpf.NETCore(플랫폼 x64로 변경)
     - NLog
-3. MVVM
+3. MVVM 초기화
+4. UI 디자인 및 구현
+
+영상이랑 사진...?
+
+
+## 8일차
+
+### 부산광역시 부산 맛집 정보앱(계속)
+1. 메인창 내용을 구글맵창으로 이동
+2. CefSharp.Wpf로 구글맵지도 표현
+3. 위도(Latitude/Lat), 경도(Longitude/Lng) 표현
+
+    
