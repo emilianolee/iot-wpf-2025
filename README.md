@@ -492,10 +492,18 @@ https://github.com/user-attachments/assets/f6e149db-b5f0-47fd-aa12-df21082eecd9
     ```sql
     select * from iformation_schema.processlist Limit 10; -- 데이터가 10건 이상이면 Limit은 삭제
     ```
-    
+
 5. WPF MVVM 전체 구현
 6. MqttPub.py와 Publish된 IoT데이터 WPF에서 Subscribe 예제
 
 
 https://github.com/user-attachments/assets/8561d260-1d1e-47c1-a93b-7ef06df335a3
 
+
+## 10일차
+
+### 스마트홈 연동 모니터링앱 (계속)
+
+#### 스마트홈 기기 실제 IoT센서데이터 모니터링앱
+
+#### 스마트홈 WPF 실시간 시각화
