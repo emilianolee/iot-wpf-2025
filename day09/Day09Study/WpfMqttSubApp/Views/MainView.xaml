@@ -8,6 +8,7 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     xmlns:local="clr-namespace:WpfMqttSubApp.Views"
+    xmlns:helper="clr-namespace:WpfMqttSubApp.Helpers"
     mc:Ignorable="d"
     ResizeMode="NoResize"
     Title="IoT MQTT Subscribe App" Height="350" Width="600"
@@ -45,8 +46,9 @@
             </Button>
         </StackPanel>
         
-        <!-- 세로 스크롤 바 -->
-        <RichTextBox Grid.Row="1" Margin="5" VerticalScrollBarVisibility="Visible">
+        <RichTextBox x:Name="LogBox" Grid.Row="1" Margin="5" VerticalScrollBarVisibility="Visible"
+                     IsReadOnly="True"
+                     helper:RichTextBoxHelper.BindableDocument="{Binding LogText, UpdateSourceTrigger=PropertyChanged}">
             <RichTextBox.Resources>
                 <Style TargetType="Paragraph">
                     <Setter Property="Margin" Value="0"/>
