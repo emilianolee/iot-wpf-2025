@@ -466,5 +466,23 @@ https://github.com/user-attachments/assets/f6e149db-b5f0-47fd-aa12-df21082eecd9
 ## 9일차
 
 ### 스마트홈 연동 모니터링앱 (계속)
+- MQTT 부터 시작
 
-### MQTT 시뮬레이션 (계속)
+####
+- telnet 명령어로 서버서비스가 동작중인지 확인
+
+    ```shell
+    # MySQL에 접속 가능한지 여부
+    > telnet 127.0.0.1 3306
+    # MQTT에 접속 가능한지 여부
+    > telnet 127.0.0.1 1883
+    ```
+
+#### MQTT 시뮬레이션 (계속)
+1. MqttPub.py 소스코드에 Fake IoT 센서값 전달 코딩
+2. Fake 센싱값을 json으로 Publish
+3. C# MAhApps.Metro 사용 MQTT 데이터 Subscriber 앱
+    - CommunityToolkit.Mvvm
+    - MahApps.Metro / MahApps.Metro.IconPacks
+    - Newtonsoft.Json
+    - MQTTnet
