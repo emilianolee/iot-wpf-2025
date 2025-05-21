@@ -569,3 +569,7 @@ https://github.com/user-attachments/assets/8561d260-1d1e-47c1-a93b-7ef06df335a3
 5. 할 일 입력창 포커스 자동 유지로 빠른 연속 입력 가능
 
 #### 실행 화면
+
+
+https://github.com/user-attachments/assets/6f9c575e-7cac-43ac-b74f-e3e827bcf588
+
