@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MahApps.Metro.Controls.Dialogs;
 using System.Collections.ObjectModel;
 using ToDoListApp.Models;
 
@@ -16,17 +15,36 @@ namespace ToDoListApp.ViewModels
         }
 
         private string _inputTime;
-        private IDialogCoordinator instance;
-
-        public ToDoViewModel(IDialogCoordinator instance)
-        {
-            this.instance = instance;
-        }
-
         public string InputTime
         {
             get => _inputTime;
-            set => SetProperty(ref _inputTime, value);
+            set
+            {
+                // 빈 문자열이면 바로 반영
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    SetProperty(ref _inputTime, string.Empty);
+                    return;
+                }
+
+                // 사용자가 직접 '시'만 입력하거나 숫자를 지워 '시'만 남은 경우 처리
+                if (value == "시간")
+                {
+                    SetProperty(ref _inputTime, string.Empty);
+                    return ;
+                }
+
+                // 숫자만 있는지 정규식 체크
+                var onlyNum = System.Text.RegularExpressions.Regex.IsMatch(value, @"^\d+$");
+
+                if (onlyNum)
+                {
+                    // 숫자만 있으면 뒤에 "시간"을 붙임!
+                    value += "시간";
+                }
+
+                SetProperty(ref _inputTime, value);
+            }
         }
 
         public ObservableCollection<ToDoItem> Tasks { get; } = new();

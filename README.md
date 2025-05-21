@@ -534,3 +534,38 @@ https://github.com/user-attachments/assets/8561d260-1d1e-47c1-a93b-7ef06df335a3
     https://github.com/user-attachments/assets/122927f3-e443-40bc-aab0-087ace281f7d
 
     스마트홈 모니터링앱 동작 영상
+
+
+## 개인 포트폴리오(To-Do-List App)
+
+### MahApps.Metro 스타일 To-Do-List App (기본)
+- WPF와 MVVM 패턴을 활용한 할 일 관리 앱  
+- MahApps.Metro UI 디자인 적용  
+- CommunityToolkit.Mvvm 사용으로 간편한 데이터 바인딩 및 커맨드 처리
+- NuGet 패키지
+    - MahApps.Metro / MahApps.Metro.IconPacks  
+    - CommunityToolkit.Mvvm  
+    - C# / XAML  
+
+#### 프로젝트 구성
+- Views: ToDoView.xaml (UI 구성 및 이벤트 처리)  
+- ViewModels: ToDoViewModel.cs (입력값 바인딩, 명령 구현)  
+- Models: ToDoItem.cs (할 일 데이터 구조) 
+
+#### 주요 기능
+- 할 일 제목과 예정 시간을 입력해 등록 가능  
+- 숫자만 입력 시 자동으로 '시간' 단위 자동 추가  
+- 체크박스로 완료 여부 표시 및 완료된 항목 스트라이크 처리  
+- 완료된 항목 일괄 삭제 기능  
+- `Enter` 키를 통한 할 일 등록 및 입력창 포커스 자동 이동  
+- 현재 날짜와 요일을 상단에 표시  
+- 할 일 리스트 자동 스크롤 기능
+
+#### 동작 흐름
+1. 할 일 입력창에 텍스트 입력  
+2. `Enter` 키 또는 추가 버튼 클릭 시 리스트에 추가  
+3. 완료 체크박스 클릭하면 텍스트 회색, 취소선 표시  
+4. 완료 항목 삭제 버튼 클릭 시 일괄 삭제  
+5. 할 일 입력창 포커스 자동 유지로 빠른 연속 입력 가능
+
+#### 실행 화면

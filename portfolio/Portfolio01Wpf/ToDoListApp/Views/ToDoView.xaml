@@ -12,10 +12,9 @@
     xmlns:sys="clr-namespace:System;assembly=System.Runtime"
     xmlns:local="clr-namespace:ToDoListApp.Views" 
     mc:Ignorable="d"
-    Title="To-Do List App" Height="600" Width="400">
-    <mah:MetroWindow.DataContext>
-        <vm:ToDoViewModel />
-    </mah:MetroWindow.DataContext>
+    Title="To-Do List App" Height="600" Width="400"
+    FocusManager.FocusedElement="{Binding ElementName=TaskTitleTextBox}">
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -32,10 +31,11 @@
                  BorderBrush="LightGray" BorderThickness="1" Padding="5"
                  ItemsSource="{Binding Tasks}" Grid.Row="1" 
                  Margin="0,10" MaxHeight="500"
-                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 >
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
-                    <Setter Property="Height" Value="100"/>
+                    <Setter Property="Height" Value="Auto"/>
                 </Style>
             </ListBox.ItemContainerStyle>
 
@@ -46,9 +46,22 @@
                         <DockPanel LastChildFill="False">
                             <CheckBox IsChecked="{Binding IsCompleted}" VerticalAlignment="Center" Margin="0,0,8,0"/>
 
-                            <StackPanel Orientation="Horizontal" Margin="5" VerticalAlignment="Center">
-                                <!-- TextBox 대신 TextBlock 사용 -->
-                                <TextBlock Text="{Binding Title}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="14">
+                            <!-- StackPanel 대신 Grid 사용 -->
+                            <Grid Margin="5" VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- 제목 -->
+                                <TextBlock Grid.Column="0"
+                               Text="{Binding Title}"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap"
+                               TextTrimming="CharacterEllipsis"
+                               VerticalAlignment="Center"
+                               Margin="0,0,5,0">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Foreground" Value="Black"/>
@@ -62,9 +75,14 @@
                                     </TextBlock.Style>
                                 </TextBlock>
 
-                                <TextBlock Text="{Binding Time}" FontSize="12" Foreground="Gray" 
-                                           Margin="15,0,0,0" VerticalAlignment="Center" />
-                            </StackPanel>
+                                <!-- 시간 -->
+                                <TextBlock Grid.Column="1"
+                               Text="{Binding ScheduledTime}"
+                               FontSize="12"
+                               Foreground="Gray"
+                               VerticalAlignment="Center"
+                               Margin="15,0,0,0"/>
+                            </Grid>
                         </DockPanel>
                     </Border>
                 </DataTemplate>
@@ -73,14 +91,17 @@
 
         <!-- 입력 영역 -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0, 10, 0, 0">
-            <TextBox Width="150" Margin="0,0,5,0" 
-                     mah:TextBoxHelper.Watermark="할 일 제목"
+            <TextBox x:Name="TaskTitleTextBox"
+                     Width="150" Margin="0,0,5,0" 
+                     mah:TextBoxHelper.Watermark="할 일"
                      Text="{Binding InputTitle, UpdateSourceTrigger=PropertyChanged}"
                      VerticalContentAlignment="Center"
                      KeyDown="TaskTitleTextBox_KeyDown"/>
-            <TextBox Width="70" Margin="0,0,5,0"
+            <TextBox x:Name="TimeTextBox"
+                     Width="70" Margin="0,0,5,0"
                      mah:TextBoxHelper.Watermark="시간"
-                     Text="{Binding InputTime, UpdateSourceTrigger=PropertyChanged}"/>
+                     Text="{Binding InputTime, UpdateSourceTrigger=PropertyChanged}"
+                     KeyDown="TimeTextBox_KeyDown"/>
             <Button Content="추가" Width="71"
                     Command="{Binding AddTaskCommand}"/>
             <Button Content="삭제" Width="71"
