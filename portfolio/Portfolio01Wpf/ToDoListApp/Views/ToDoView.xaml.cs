@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using System.Collections.Specialized;
 using System.Windows.Input;
 using System.Windows.Threading;
@@ -15,7 +16,23 @@ namespace ToDoListApp.Views
         {
             InitializeComponent();
 
-            DataContext = new ToDoViewModel();
+            var vm = new ToDoViewModel(DialogCoordinator.Instance);
+            this.DataContext = vm;
+            vm.PropertyChanged += (sender, e) =>
+            {
+                if (e.PropertyName == nameof(vm.InputTitle))
+                {
+                    Dispatcher.InvokeAsync(() =>
+                    {
+                        if (TaskListBox.Items.Count > 0)
+                        {
+                            TaskListBox.ScrollIntoView(TaskListBox.Items[TaskListBox.Items.Count - 1]);
+                        }
+                    });
+                }
+            };
+
+            //DataContext = new ToDoViewModel();
             DateTextBlock.Text = DateTime.Now.ToString("yyyy-MM-dd ddd");
         }
 

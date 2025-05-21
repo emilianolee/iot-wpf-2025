@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MahApps.Metro.Controls.Dialogs;
 using System.Collections.ObjectModel;
 using ToDoListApp.Models;
 
@@ -15,6 +16,13 @@ namespace ToDoListApp.ViewModels
         }
 
         private string _inputTime;
+        private IDialogCoordinator instance;
+
+        public ToDoViewModel(IDialogCoordinator instance)
+        {
+            this.instance = instance;
+        }
+
         public string InputTime
         {
             get => _inputTime;
